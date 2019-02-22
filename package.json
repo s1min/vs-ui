@@ -1,0 +1,27 @@
+{
+  "name": "vs-ui",
+  "version": "1.0.0",
+  "description": "Mobile UI for Vue.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s1min/vs-ui.git"
+  },
+  "keywords": [
+    "mobile",
+    "UI",
+    "vue"
+  ],
+  "author": "raohonghua@foxmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/s1min/vs-ui/issues"
+  },
+  "homepage": "https://github.com/s1min/vs-ui#readme",
+  "devDependencies": {
+    "webpack": "^4.29.5"
+  }
+}
