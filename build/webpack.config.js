@@ -10,11 +10,31 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist')
   },
+  module: {
+    rules: [
+      {
+        test: /\.css/,
+        include: [
+          path.resolve(__dirname, 'src')
+        ],
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      }
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: path.resolve(__dirname, '../dist/index.html'),
       template: 'index.html',
-      inject: true
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
+      chunksSortMode: 'dependency',
     })
   ]
 }
