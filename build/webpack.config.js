@@ -5,24 +5,40 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: './src/main.js'
+    main: './src/main.js',
   },
   output: {
-    path: path.resolve(__dirname, './dist')
+    path: path.resolve(__dirname, './dist'),
   },
   module: {
     rules: [
       {
         test: /\.css/,
         include: [
-          path.resolve(__dirname, 'src')
+          path.resolve(__dirname, 'src'),
         ],
         use: [
           'style-loader',
-          'css-loader'
-        ]
-      }
-    ]
+          'css-loader',
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {},
+          },
+        ],
+      },
+      {
+        test: /\.jsx?/,
+        include: [
+          path.resolve(__dirname, 'src'),
+        ],
+        loader: 'babel-loader',
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -35,6 +51,6 @@ module.exports = {
         removeAttributeQuotes: true,
       },
       chunksSortMode: 'dependency',
-    })
-  ]
+    }),
+  ],
 }
