@@ -13,6 +13,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', 'jsx', '.vue'],
   },
+  devServer: {
+    host: 'localhost',
+    port: '8080',
+  },
   module: {
     rules: [
       {
