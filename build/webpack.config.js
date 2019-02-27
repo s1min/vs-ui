@@ -10,6 +10,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
   },
+  resolve: {
+    extensions: ['.js', 'jsx', '.vue'],
+  },
   module: {
     rules: [
       {
