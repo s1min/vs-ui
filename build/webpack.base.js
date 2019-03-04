@@ -8,7 +8,10 @@ module.exports = {
     main: './src/main.js',
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, '../dist'),
+    publicPath: '/assets',
+    filename: '[name].[hash:6].js',
+    chunkFilename: '[name].bundle.[hash:6].js',
   },
   resolve: {
     extensions: ['.js', 'jsx', '.vue'],
